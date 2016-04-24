@@ -1,0 +1,20 @@
+.sprite {
+  background-image: url(../images/social_icons.png);
+  background-repeat: no-repeat;
+  display: inline-block; }
+
+.sprite-facebook_icon {
+  width: 44px;
+  height: 44px;
+  background-position: 0 0; }
+
+.sprite-pinterest_icon {
+  width: 46px;
+  height: 46px;
+  background-position: -44px 0; }
+
+.sprite-twitter_icon {
+  width: 44px;
+  height: 44px;
+  background-position: 0 -46px;
+  transition: all; }
