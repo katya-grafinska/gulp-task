@@ -18,7 +18,7 @@ var runSequence = require('run-sequence');//run tasks in sequence
 //Development Tasks
 //------------------
 
-gulp.task('browserSync', ['styles', 'html', 'images', 'scripts'], function(){
+gulp.task('browserSync', ['styles', 'html', 'images', 'scripts', 'fonts'], function(){
   browserSync.init({
     server: {
       baseDir: './dist'
@@ -35,13 +35,6 @@ gulp.task('sass', function(){
     }))
 });
 
-//Watchers
-gulp.task('watch', function(){
-  gulp.watch('app/scss/**/*.scss', ['sass']); 
-  gulp.watch('app/*.html', browserSync.reload); 
-  gulp.watch('app/js/**/*.js', browserSync.reload); 
-});
-
 gulp.task('html', function() {
    return gulp.src('app/**/*.html')
        .pipe(htmlmin({collapseWhitespace: true}))
@@ -52,7 +45,7 @@ gulp.task('styles', ['sass'], function() {
   return gulp.src('app/css/*.css')
     .pipe(autoprefixer())
     .pipe(gconcat('main.css'))
-    .pipe(cssnano()) // Minifies CSS file
+    //.pipe(cssnano()) // Minifies CSS file
     .pipe(gulp.dest('dist/css'))
 })
 
@@ -91,11 +84,10 @@ gulp.task('clean', function() {
 })
 
 gulp.task('watch', ['browserSync'], function(){
-   gulp.watch('app/css/**/*', ['bsync:styles']);
+   gulp.watch('app/scss/**/*.scss', ['bsync:styles']);
    gulp.watch('app/**/*.html', ['bsync:html']);
    gulp.watch('app/js/**/*', ['bsync:scripts']);
 });
-
 
 gulp.task('bsync:styles', ['styles'], function(){
    browserSync.reload();
@@ -113,7 +105,7 @@ gulp.task('bsync:scripts', ['scripts'], function(){
 // ---------------
 
 gulp.task('default', function (callback) {
-  runSequence(['browserSync', 'watch'],callback)
+  runSequence(['browserSync', 'watch'], callback)
 });
 
 gulp.task('build', function (callback) {

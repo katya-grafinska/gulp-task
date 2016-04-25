@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "jquery": "^2.2.3",
-    "meyer-reset": "*"
+    "bootstrap-sass": "^3.3.6"
   }
 }
