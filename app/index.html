@@ -7,36 +7,66 @@
 	<title>My gulp homework</title>
 </head>
 <body>
-<header id="home">
-	<nav class="navbar navbar-default">
-	  <div class="container">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#" id="logo">
-		      <img src="images/heart_logo.png" alt="">
-		      Colorful flat
-	      </a>
-	    </div>
+	<header id="home">
+		<nav class="navbar navbar-static-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#" id="logo">
+						<img src="images/heart_logo.png" alt="">
+						Colorful flat
+					</a>
+				</div>
 
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#home">Home</a></li>
-					<li><a href="#services">Services</a></li>
-					<li class="active"><a href="#portfolio">Portfolio</a></li>
-					<li><a href="#blog">Blog</a></li>
-					<li><a href="#contact">Contact</a></li>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container -->
-	</nav>
-</header>
-<script src="js/main.js"></script>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#services">Services</a></li>
+						<li class="active"><a href="#portfolio">Portfolio</a></li>
+						<li><a href="#blog">Blog</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container -->
+		</nav>
+		<div id="carousel-header" class="carousel slide container" data-ride="carousel">
+			<!-- Indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#carousel-header" data-slide-to="0" class="active"></li>
+				<li data-target="#carousel-header" data-slide-to="1"></li>
+				<li data-target="#carousel-header" data-slide-to="2"></li>
+			</ol>
+			<!-- Wrapper for slides -->
+			<div class="carousel-inner" role="listbox">
+				<div class="item active row">
+					<img src="images/iMac.png" alt="" class="col-sm-4 col-sm-push-7">
+					<h2 class="carousel-caption col-sm-7 col-sm-pull-5">This template <br> is awesome!</h2>
+				</div>
+				<div class="item row">
+					<img src="images/iMac.png" alt="" class="col-sm-4 col-sm-push-7">
+					<h2 class="carousel-caption col-sm-7 col-sm-pull-5">This template <br> is awesome!</h2>
+				</div>
+				<div class="item row">
+					<img src="images/iMac.png" alt="" class="col-sm-4 col-sm-push-7">
+					<h2 class="carousel-caption col-sm-7 col-sm-pull-5">This template <br> is awesome!</h2>
+				</div>
+			</div>
+		</div>
+
+	</header>
+	<script src="js/main.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script>
+		$('.carousel').carousel({
+			interval: 4000
+		})
+	</script>
 </body>
 </html>

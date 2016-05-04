@@ -6693,7 +6693,6 @@ button.close {
   font-weight: normal;
   font-style: normal; }
 
-/* self-clear floats */
 .group:after {
   content: ".";
   display: block;
@@ -6701,36 +6700,23 @@ button.close {
   clear: both;
   visibility: hidden; }
 
-img {
-  max-width: 100%; }
-
 body {
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   position: relative;
   font-size: 19px;
   line-height: 1.42105;
-  /*27x19*/
   text-align: center; }
 
 header#home {
   color: #3a494c;
-  background-color: #a7d4dc; }
-  header#home .navbar-default {
-    background-color: transparent;
-    border: none;
-    padding-top: 12px; }
-    header#home .navbar-default .navbar-header {
-      min-height: 60px; }
-    header#home .navbar-default .navbar-brand, header#home .navbar-default a {
-      color: #3a494c;
-      text-decoration: none;
-      font-weight: bold; }
-    header#home .navbar-default .navbar-brand {
-      padding: 10px 15px; }
-    header#home .navbar-default .active a {
-      background-color: #3a494c;
-      color: #a7d4dc;
-      border-radius: 10px; }
+  background-color: #a7d4dc;
+  padding-bottom: 50px; }
+  header#home h2 {
+    font-family: "Carton";
+    line-height: 1.2; }
+    @media (min-width: 992px) {
+      header#home h2 {
+        font-size: 2.3em; } }
 
 #logo {
   font-family: "Carton", serif;
@@ -6740,6 +6726,56 @@ header#home {
   letter-spacing: 1px; }
   #logo img {
     display: inline-block; }
+
+.navbar li.active a, .navbar li a:hover, .navbar li a:active, .navbar li a:focus {
+  background-color: #3a494c;
+  color: #a7d4dc;
+  border-radius: 5px; }
+
+.navbar {
+  background-color: transparent;
+  border: none;
+  padding-top: 12px; }
+  .navbar .navbar-header {
+    min-height: 60px; }
+  .navbar .navbar-brand, .navbar a {
+    color: #3a494c;
+    font-weight: bold; }
+  .navbar .navbar-brand {
+    padding: 10px 15px; }
+  .navbar .icon-bar {
+    background-color: #3a494c;
+    height: 3px;
+    width: 27px; }
+
+.carousel-indicators {
+  bottom: -25px; }
+  @media (min-width: 768px) {
+    .carousel-indicators {
+      bottom: -50px; } }
+  .carousel-indicators li {
+    width: 20px;
+    height: 20px;
+    margin: 3px 6px; }
+    .carousel-indicators li.active {
+      width: 22px;
+      height: 22px;
+      margin: 2px 6px; }
+
+@media (max-width: 767px) {
+  .carousel-caption {
+    position: static; } }
+
+.col-sm-pull-5 {
+  right: 41.66666667% !important;
+  left: 0; }
+
+.carousel .item.row {
+  margin: 0; }
+
+@media (max-width: 767px) {
+  .carousel .item img {
+    margin: 0 auto; } }
 
 .social_footer {
   background-image: url(../images/social_footer.png);
