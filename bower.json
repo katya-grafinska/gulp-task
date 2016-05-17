@@ -16,6 +16,8 @@
   ],
   "dependencies": {
     "jquery": "^2.2.3",
-    "bootstrap-sass": "^3.3.6"
+    "bootstrap-sass": "^3.3.6",
+    "magnific-popup": "^1.1.0",
+    "mixitup": "^2.1.11"
   }
 }

@@ -4,15 +4,18 @@
   font-weight: normal;
   font-style: normal; }
 
-.group:after {
+#portfolio nav:after {
   content: ".";
   display: block;
   height: 0;
   clear: both;
   visibility: hidden; }
 
+img {
+  max-width: 100%; }
+
 body {
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   position: relative;
   font-size: 19px;
   line-height: 1.42105;
@@ -87,3 +90,85 @@ header#home {
 @media (max-width: 767px) {
   .carousel .item img {
     margin: 0 auto; } }
+
+.section_title, .section_lead {
+  color: #feffff; }
+
+.section_title {
+  font-family: "Carton";
+  line-height: 1.2;
+  padding: 3% 0 1%; }
+  @media (min-width: 992px) {
+    .section_title {
+      font-size: 2.3em; } }
+
+.section_lead {
+  opacity: .46;
+  font-weight: 400;
+  font-size: 0.84211em; }
+
+#services {
+  padding: 8% 0 8%; }
+  #services figure {
+    margin: 0 0 11%; }
+    #services figure h1 {
+      font-size: 1.21053em;
+      font-family: "Open Sans", sans-serif;
+      font-weight: bold;
+      color: #323232;
+      line-height: 1.17391;
+      margin: 3% 0 2%; }
+    #services figure p {
+      color: #5e5e5e; }
+    #services figure img {
+      max-height: 113px; }
+
+.show_more_button {
+  border-radius: 9px;
+  text-transform: uppercase;
+  color: #fff;
+  font-size: 1.15789em;
+  font-weight: 600;
+  padding: 10px;
+  width: 185px;
+  margin: 10px auto 0; }
+
+#portfolio {
+  background-color: #9bd6a7; }
+  #portfolio nav {
+    margin: 5% 0; }
+    #portfolio nav ul {
+      text-align: center; }
+    #portfolio nav li {
+      margin: 0 2%;
+      text-align: center;
+      display: inline-block; }
+      #portfolio nav li.active a {
+        color: #a2a3a3;
+        background-color: #fff;
+        border-radius: 9px; }
+      #portfolio nav li:first-child {
+        margin-left: 0; }
+      #portfolio nav li:last-child {
+        margin-right: 0; }
+    #portfolio nav a {
+      padding: 10px 10px 5px;
+      color: #fff;
+      font-size: 1em;
+      font-weight: 600;
+      text-transform: uppercase;
+      border: 2px solid transparent; }
+      #portfolio nav a:hover {
+        border: 2px solid #fff;
+        border-radius: 9px;
+        background-color: transparent;
+        cursor: pointer; }
+  #portfolio .show_more_button {
+    color: #a2a3a3;
+    border: none;
+    margin: 5% 0; }
+  #portfolio img {
+    margin-bottom: 3%; }
+
+.mix {
+  display: none; }
