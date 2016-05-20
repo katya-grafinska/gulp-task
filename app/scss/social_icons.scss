@@ -2,6 +2,11 @@
     background-image: url(../images/social_icons.png);
     background-repeat: no-repeat;
     display: inline-block;
+    border-radius: 50%;
+    transition: .3s;
+    &:hover {
+        box-shadow: 4px 5px 4px;
+    }
 }
 
 .sprite-facebook_icon {
@@ -20,5 +25,4 @@
     width: 44px;
     height: 44px;
     background-position: 0 -46px;
-    transition: all;
 }

@@ -1,6 +1,8 @@
 //colors
 $text-color-header: #3a494c;
 $bgc-blue: #a7d4dc;
+$color-grey: #a2a3a3;
+$contact_color: #d3d0d0;
 
 //fonts
 @font-face {
@@ -31,10 +33,6 @@ $mobile: "max-width: 767px";
 	visibility: hidden;
 }
 
-* {
-	transition: all .3s ease-in-out;
-}
-
 img {
 	max-width: 100%;
 }
@@ -54,6 +52,10 @@ input, textarea {
 
 section {
 	padding-bottom: 5%;
+}
+
+@mixin font-size($size) {
+	font-size: ($size/$font-size)+em;
 }
 
 %title {
@@ -109,6 +111,11 @@ header#home {
 				@extend %navbar-link-hover;
 			}
 		}
+
+		a {
+			transition: .3s;
+		}
+
 		a:hover, a:active, a:focus {
 			@extend %navbar-link-hover;
 		}
@@ -171,21 +178,39 @@ header#home {
 }
 
 .section_lead {
-	opacity: .46;
-	font-weight: 400;
-	font-size: (16px/$font-size)+em;
+	opacity: .7;
+	@include font-size(16px);
 	margin: 0 auto 8%;
   @media ($tablet) {
   	width: 60%;
   }
 }
 
+%own-grid {
+	
+	&.col-md-4, &.col-sm-4 {
+		@media ($desktop) {
+
+			width: 30%;
+
+			&:first-child {
+				margin-right: 5%;
+			}
+
+			&:last-child {
+				margin-left: 5%;
+			}
+		}
+	}
+}
+
 #services {
 	padding: 8% 0 8%;
 	figure {
-		margin: 0 0 11%;
+		@extend %own-grid;
+
 		h1 {
-			font-size: (23px/$font-size)+em;
+			@include font-size(23px);
 			font-family: $open_sans;
 			font-weight: bold;
 			color: #323232;
@@ -195,6 +220,7 @@ header#home {
 
 		p {
 			color: #5e5e5e;
+			@include font-size(16px);
 		}
 
 		img {
@@ -206,13 +232,14 @@ header#home {
 	border-radius: 9px;
 	text-transform: uppercase;
 	color: #fff;
-	font-size: (22px/$font-size)+em;
+	@include font-size(22px);
 	font-weight: 600;
 	padding: 20px 10px;
 	width: 185px;
 	margin: 10px auto 0;
 	cursor: pointer;
 	border: none;
+	transition: .3s;
 	&:hover {
 		color: #333;
     background-color: rgba(0,0,0,.5);
@@ -236,7 +263,7 @@ header#home {
 
 			&.active {
 				a {
-					color: #a2a3a3;
+					color: $color-grey;
 					background-color: #fff;
 					border-radius: 9px;
 				}
@@ -256,6 +283,7 @@ header#home {
 			font-weight: 600;
 			text-transform: uppercase;
 			border: 2px solid transparent;
+			transition: .3s;
 			&:hover {
 				border: 2px solid #fff;
 				border-radius: 9px;
@@ -266,7 +294,7 @@ header#home {
 	}
 
 	.show_more_button {
-		color: #a2a3a3;
+		color: $color-grey;
 		border: none;
 		margin: 5% 0;
 	}
@@ -293,7 +321,7 @@ header#home {
 	p {
 		color: #515151;
 		margin: 20px 0;
-		font-size: (16px/$font-size)+em;
+		@include font-size(16px);
 	}
 
 	figure {
@@ -322,21 +350,28 @@ article {
 	}
 
 	h1 {
-		font-size: (27px/$font-size)+em;
+		@include font-size(27px);
 		font-weight: bold;
 	}
 
 	p {
 		padding: 15px;
+		@include font-size(15px);
+		color: $color-grey;
+		line-height: 1.6;
 	}
 
 	time {
 		font-style: italic;
+		@include font-size(15px);
 	}
 }
 
 #team {
 	background-color: #e1b8c7;
+	.col-sm-4 {
+		@extend %own-grid;
+	}
 	article {
 		h1 {
 			font-family: $carton;
@@ -356,9 +391,42 @@ article {
 	background-color: #3c3d3d;
 	text-align: left;
 	.section_title, .section_lead {
-		color: #d3d0d0;
+		color: $contact_color;
 		opacity: 1;
 		text-align: center;
+	}
+
+	form {
+		font-weight: bold;
+	}
+
+	input, textarea {
+		margin-bottom: 5%;
+	}
+
+	input {
+		padding: 5% 4%;
+		&.btn {
+			margin: 0 auto;
+	    display: block;
+	    font-weight: bold;
+	    border-radius: 9px;
+			text-transform: uppercase;
+			padding: 3% 2%;
+			@include font-size(22px);
+			width: 40%;
+			cursor: pointer;
+			transition: .3s;
+			&:hover {
+				color: $contact_color;
+		    background-color: rgba(0,0,0,.5);
+			}
+		}
+	}
+
+	textarea {
+		resize: none;
+		padding: 2% 4%;
 	}
 }
 
@@ -368,4 +436,10 @@ footer {
 
 footer, form input, header {
 	text-align: left;
+}
+
+.social_footer_group {
+	@media($mobile) {
+		text-align: center;
+	}
 }
