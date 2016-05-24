@@ -14,6 +14,7 @@ var imagemin = require('gulp-imagemin'); //optimizing images
 var cache = require('gulp-cache');
 var del = require('del');//delete files
 var runSequence = require('run-sequence');//run tasks in sequence
+var deploy = require('gulp-gh-pages');
 
 //Development Tasks
 //------------------
@@ -66,6 +67,11 @@ gulp.task('images', function(){
 gulp.task('fonts', function() {
   return gulp.src('app/fonts/**/*')
   .pipe(gulp.dest('dist/fonts'))
+});
+
+gulp.task('deploy', function () {
+  return gulp.src("./dist/**/*")
+    .pipe(deploy())
 });
 
 // Clean
