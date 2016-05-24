@@ -46,7 +46,7 @@ gulp.task('styles', ['sass'], function() {
   return gulp.src('app/css/*.css')
     .pipe(autoprefixer())
     .pipe(gconcat('main.css'))
-    //.pipe(cssnano()) // Minifies CSS file
+    .pipe(cssnano()) // Minifies CSS file
     .pipe(gulp.dest('dist/css'))
 })
 
@@ -111,13 +111,5 @@ gulp.task('bsync:scripts', ['scripts'], function(){
 // ---------------
 
 gulp.task('default', function (callback) {
-  runSequence(['browserSync', 'watch'], callback)
-});
-
-gulp.task('build', function (callback) {
-  runSequence(
-    'clean:dist',
-    ['html', 'styles', 'scripts', 'images', 'fonts'],
-    callback
-  )
+  runSequence('clean:dist', ['watch'], callback)
 });
