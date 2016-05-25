@@ -1,3 +1,6 @@
+Homework from JS Training Center.
+Hometask is described here https://github.com/katya-grafinska/gulp-lesson/blob/master/README.md
+
 You need to have installed [npm], [Gulp] and [Bower]
 
 #Existing gulp tasks
